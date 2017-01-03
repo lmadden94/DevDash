@@ -1,0 +1,47 @@
+<html>
+	<head>
+		<!-- Load Static Files -->
+		{% load static %}
+
+		<!-- Page Title -->
+		<title>DevDash</title>
+
+		<!-- Include Static CSS Files (including Semantic UI) -->
+		<link rel='stylesheet' type='text/css' href="{% static 'projects/css/style.css' %}" />
+		<link rel='stylesheet' type='text/css' href="{% static 'projects/css/semantic.min.css' %}" />
+
+		<!-- Include Semantic UI JavaScript Files -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script type='text/javascript' src="{% static 'projects/js/semantic.min.js' %}"></script>
+		<script type='text/javascript'>
+			$(document).ready(function(){
+				$('div.ui.card').each(function(i, card){
+					console.log(i);
+				})
+			});
+		</script>
+	</head>
+	<body>
+		<br />
+		<div class='ui grid container'>
+			<div class='sixteen wide column'>
+				<h1 class='ui header'>The Development Dashboard: Projects</h1>
+			</div>
+		</div>
+		<div class='ui grid container'>
+			{% for project in projects %}
+				<div class='five wide column'>
+					<div class='ui card violet'>
+						<div class='content'>
+							<div class='header'>{{ project.project_name }}</div>
+						</div>
+						<div class='content'>
+							<div class='ui sub header'>Activity</div>
+							<p>No notes</p>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</body>
+</html>
