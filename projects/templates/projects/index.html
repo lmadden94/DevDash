@@ -15,8 +15,15 @@
 		<script type='text/javascript' src="{% static 'projects/js/semantic.min.js' %}"></script>
 		<script type='text/javascript'>
 			$(document).ready(function(){
+
+				var colorChoice = 0;
+				var colors = ['blue', 'green', 'orange', 'violet', 'red', 'purple', 'yellow'];
+
 				$('div.ui.card').each(function(i, card){
-					console.log(i);
+					$(card).addClass(colors[colorChoice]);
+
+					colorChoice++;
+					if (colorChoice == 7) { colorChoice = 0; }
 				})
 			});
 		</script>
@@ -31,7 +38,7 @@
 		<div class='ui grid container'>
 			{% for project in projects %}
 				<div class='five wide column'>
-					<div class='ui card violet'>
+					<div class='ui card'>
 						<div class='content'>
 							<div class='header'>{{ project.project_name }}</div>
 						</div>

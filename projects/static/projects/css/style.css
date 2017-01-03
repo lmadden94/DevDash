@@ -1,4 +1,6 @@
 html, body { font-family: Tahoma, Geneva, sans-serif; }
 
-body {  }
+body {
+	background-image: url('../images/geometry2.png') !important;
+}
 
