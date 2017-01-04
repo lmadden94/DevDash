@@ -79,7 +79,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'DevDash',
         'USER': 'root',
-        'PASSWORD': 't)&upI&Hl6l*',
+        'PASSWORD': 'admin', # Home
+        # Work 'PASSWORD': 't)&upI&Hl6l*',
         'HOST': '127.0.0.1',
         'PORT': '3306',
     }

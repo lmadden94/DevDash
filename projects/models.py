@@ -16,9 +16,6 @@ class Project(models.Model):
 	def enhancement_count(self):
 		return self.enhancement_set.filter(completed=False).count()
 
-	def possible_colors(self):
-		return {'red', 'orange', 'yellow', 'green', 'teal', 'blue', 'violet', 'purple'}
-
 
 class Enhancement(models.Model):
 	project = models.ForeignKey(Project, on_delete=models.CASCADE)

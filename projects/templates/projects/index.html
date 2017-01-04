@@ -23,7 +23,7 @@
 					$(card).addClass(colors[colorChoice]);
 
 					colorChoice++;
-					if (colorChoice == 7) { colorChoice = 0; }
+					if (colorChoice == colors.length) { colorChoice = 0; }
 				})
 			});
 		</script>
@@ -35,7 +35,7 @@
 				<h1 class='ui header'>The Development Dashboard: Projects</h1>
 			</div>
 		</div>
-		<div class='ui grid container'>
+		<div class='ui stackable grid container'>
 			{% for project in projects %}
 				<div class='five wide column'>
 					<div class='ui card'>
@@ -45,6 +45,9 @@
 						<div class='content'>
 							<div class='ui sub header'>Activity</div>
 							<p>No notes</p>
+						</div>
+						<div class='extra content'>
+							<p class='needs'>Bugs: {{ project.bug_count }},  Enhancements: {{ project.enhancement_count }}</p>
 						</div>
 					</div>
 				</div>

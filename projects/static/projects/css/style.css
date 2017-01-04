@@ -4,3 +4,6 @@ body {
 	background-image: url('../images/geometry2.png') !important;
 }
 
+div.extra.content p.needs {
+	font-size: 0.8em;
+}
