@@ -1,0 +1,9 @@
+html, body { font-family: Tahoma, Geneva, sans-serif; }
+
+body {
+	background-image: url('../images/geometry2.png') !important;
+}
+
+p.task-card-user-info {
+	font-size: 0.9em;
+}

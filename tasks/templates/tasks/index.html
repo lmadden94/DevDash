@@ -4,16 +4,17 @@
 		{% load static %}
 
 		<!-- Page Title -->
-		<title>DevDash - Projects</title>
+		<title>DevDash - Tasks</title>
 
 		<!-- Include Static CSS Files (including Semantic UI) -->
-		<link rel='stylesheet' type='text/css' href="{% static 'projects/css/style.css' %}" />
-		<link rel='stylesheet' type='text/css' href="{% static 'projects/css/semantic.min.css' %}" />
+		<link rel='stylesheet' type='text/css' href="{% static 'tasks/css/style.css' %}" />
+		<link rel='stylesheet' type='text/css' href="{% static 'tasks/css/semantic.min.css' %}" />
 
 		<!-- Include Semantic UI JavaScript Files -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-		<script type='text/javascript' src="{% static 'projects/js/semantic.min.js' %}"></script>
+		<script type='text/javascript' src="{% static 'tasks/js/semantic.min.js' %}"></script>
 		<script type='text/javascript'>
+			/*
 			$(document).ready(function(){
 
 				var colorChoice = 0;
@@ -26,28 +27,30 @@
 					if (colorChoice == colors.length) { colorChoice = 0; }
 				})
 			});
+			*/
 		</script>
 	</head>
 	<body>
 		<br />
 		<div class='ui grid container'>
 			<div class='sixteen wide column'>
-				<h1 class='ui header'>The Development Dashboard: Projects</h1>
+				<h1 class='ui header'>The Development Dashboard: Tasks</h1>
 			</div>
 		</div>
 		<div class='ui stackable grid container'>
-			{% for project in projects %}
+			{% for task in tasks %}
 				<div class='five wide column'>
 					<div class='ui card'>
 						<div class='content'>
-							<div class='header'>{{ project.project_name }}</div>
+							<div class='header'>{{ task.task_name }}</div>
 						</div>
 						<div class='content'>
 							<div class='ui sub header'>Activity</div>
-							<p>No notes</p>
+							<p>Needs to be completed.</p>
 						</div>
 						<div class='extra content'>
-							<p class='needs'>Bugs: {{ project.bug_count }},  Enhancements: {{ project.enhancement_count }}</p>
+							<p class='task-card-user-info'>Created by: <a href='#'><b>{{ task.creator.first_name }}</b></a></p>
+							<p class='task-card-user-info'>To be Completed by: <a href='#'><b>{{ task.executor.username }}</b></a></p>
 						</div>
 					</div>
 				</div>

@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'projects',
+    'tasks',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -79,8 +80,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'DevDash',
         'USER': 'root',
-        'PASSWORD': 'admin', # Home
-        # Work 'PASSWORD': 't)&upI&Hl6l*',
+        #'PASSWORD': 'admin', # Home
+        'PASSWORD': 't)&upI&Hl6l*', # Work
         'HOST': '127.0.0.1',
         'PORT': '3306',
     }

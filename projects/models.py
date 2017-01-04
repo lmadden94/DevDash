@@ -22,7 +22,7 @@ class Enhancement(models.Model):
 	enhancement_title = models.CharField(max_length=100)
 	enhancement_description = models.TextField(max_length=500)
 	completed = models.BooleanField(default=False)
-	completed_on = models.DateTimeField('date completed')
+	completed_on = models.DateTimeField('date completed', blank=True, null=True)
 
 	def __str__(self):
 		return self.enhancement_title
@@ -33,7 +33,7 @@ class Bug(models.Model):
 	bug_title = models.CharField(max_length=100)
 	bug_description = models.TextField(max_length=500)
 	completed = models.BooleanField(default=False)
-	completed_on = models.DateTimeField('date completed')
+	completed_on = models.DateTimeField('date completed', blank=True, null=True)
 
 	def __str__(self):
 		return self.bug_title
